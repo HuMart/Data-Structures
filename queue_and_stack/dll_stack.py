@@ -15,14 +15,20 @@ class Stack:
     self.storage.add_to_head(value)
   
   def pop(self):
-    if self.storage > 0:
-      self.size -= 1
-      return self.storage.remove_from_head()
+    if self.storage == 0:
+      return
     else:
-      return None
+      self.size -= 1
+      num = self.storage.remove_from_head()
+      return num
     
 
   def len(self):
     return self.size
 x = Stack()
 print(x.len())
+x.push(4)
+print(x.len())
+x.push(6)
+print(x.len())
+print(x.pop())
