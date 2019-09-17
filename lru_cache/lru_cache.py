@@ -7,7 +7,10 @@ class LRUCache:
   to every node stored in the cache.
   """
   def __init__(self, limit=10):
-    pass
+    self.limit = 10
+    self.item = {}
+    self.priority = {}
+    self.high_priority = 0
 
   """
   Retrieves the value associated with the given key. Also
@@ -17,7 +20,12 @@ class LRUCache:
   key-value pair doesn't exist in the cache. 
   """
   def get(self, key):
-    pass
+    if key in self.item.keys():
+      self.priority[key] = self.high_priority
+      self.high_priority += 1
+      return self.item[key]
+    else:
+      return None
 
   """
   Adds the given key-value pair to the cache. The newly-
