@@ -42,7 +42,20 @@ class BinarySearchTree:
   # We can stop at the first instance of a value
   # We know it's not found if we get to a node that doesn't have children
   def contains(self, target):
-    pass
+    if target == self.value:
+      return True
+       
+    if target > self.value: #Go to the right side
+      if not self.right:
+        return False
+      else:
+        return self.right.contains(target)
+
+    if target < self.value:
+      if not self.left:
+        return False
+      else:
+        return self.left.contains(target)
 
   # * `get_max` returns the maximum value in the binary search tree.
   def get_max(self):
