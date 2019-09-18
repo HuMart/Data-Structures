@@ -53,6 +53,7 @@ class BinarySearchTreeTests(unittest.TestCase):
     self.assertTrue(v3 in arr)
     self.assertTrue(v4 in arr)
     self.assertTrue(v5 in arr)
+    
 
 
 if __name__ == '__main__':

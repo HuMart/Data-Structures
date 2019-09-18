@@ -77,10 +77,12 @@ class BinarySearchTree:
     if self.right:
       self.right.for_each(cb)
 
-  def delete(self, target):
-    if target == self.value:
-      if not self.left:
-        self.value = self.right
-      else:
-        self.left.delete(target)
-    
+
+  # def delete(self, target):
+  #   if target == self.value:
+  #     if not self.left:
+  #       self.value = self.right
+  #     else:
+  #       self.left.delete(target)
+
+  
